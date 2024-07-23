@@ -1,8 +1,10 @@
 import logo from './logo.svg';
-import './App.css';
-import { AvatarField, Button, InputTextField, ListItemReusable, RatingStar } from '@ppulashkar/dhre-component';
-import { Edit, Inbox } from '@mui/icons-material';
 import { useState } from 'react';
+import './App.css';
+import { AvatarField, ButtonCustom, BadgeCustom, AvatarCustom, InputTextField, ListItemReusable, RatingStar, MUIComponents, MUIIcons} from '@ppulashkar/dhre-component';
+const { Input, Box } = MUIComponents;
+const { Inbox, Edit } = MUIIcons;
+
 
 function App() {
 
@@ -16,18 +18,25 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Button label={'Click Me'}></Button>
-        <InputTextField label={'UserName'} variant={'outlined'}></InputTextField>
-        <RatingStar value={rating} onChange={handleChange} precision={0.5} />
-        <ListItemReusable
-          title="Inbox"
-          subtitle="You have new messages"
-          avatar={<Inbox />}
-          icon={<Edit />}
-          onIconClick={() => alert('Edit clicked')}
-          tooltip="Edit"
-        />
-        <AvatarField name={'Prashant Pulashkar'} />
+        <div>
+          <Input/>
+          <Box />
+          <ButtonCustom label={'Click Me'}></ButtonCustom>
+          <InputTextField label={'UserName'} variant={'outlined'}></InputTextField>
+          <RatingStar value={rating} onChange={handleChange} precision={0.5} />
+          <ListItemReusable
+            title="Inbox"
+            subtitle="You have new messages"
+            avatar={<Inbox />}
+            icon={<Edit />}
+            onIconClick={() => alert('Edit clicked')}
+            tooltip="Edit"
+          />
+          <AvatarField name={'Prashant Pulashkar'}  />
+          <BadgeCustom color='success' badgeContent="ABC" />
+          <AvatarCustom alt='PP' src={'/'} />
+          
+        </div>
       </header>
     </div>
   );
